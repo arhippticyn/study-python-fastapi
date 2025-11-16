@@ -1,3 +1,4 @@
+# Урок 2: Основи синтаксису Python: змінні, оператори, типи даних.
 # num_1 = 5
 # print(type(num_1))
 
@@ -105,6 +106,7 @@
 # print(len(list))
 # print(len(list) == 4 and base_dict['letter'] != 12)
 
+# Урок 3: Управляючі конструкції: умовні оператори та цикли.
 
 # string = 'Hello world'
 
@@ -260,6 +262,8 @@
         
 # print('All users were check')
 
+# Урок 4: Структури даних: списки, кортежі, словники.
+
 # a = [1,2,3,4,5]
 # b = ['apple', 'banana', 'cherry']
 
@@ -309,7 +313,7 @@
 # print(a.count(5), a.count(4))
 # print(a.index(4))
 
-test_dict = {'user': 'Oleg', 'age': 21, 'country': 'Poland'}
+# test_dict = {'user': 'Oleg', 'age': 21, 'country': 'Poland'}
 # print(test_dict['user'], test_dict['age'], test_dict.get('country'))
 # print(test_dict.get('animal', 'key not'))
 # test_dict['age'] = 30
@@ -319,17 +323,73 @@ test_dict = {'user': 'Oleg', 'age': 21, 'country': 'Poland'}
 # animal = test_dict.pop('animal')
 # print(test_dict)
 # print(animal)
-copy_test = test_dict.copy()
-print(copy_test)
-test_dict.clear()
-print(test_dict)
+# copy_test = test_dict.copy()
+# print(copy_test)
+# test_dict.clear()
+# print(test_dict)
 
-for key, value in copy_test.items():
-    print(f'key: {key}, Value: {value}')
+# for key, value in copy_test.items():
+#     print(f'key: {key}, Value: {value}')
     
-wrong_key = copy_test.pop('currency', 'key not')
-print(wrong_key)
+# wrong_key = copy_test.pop('currency', 'key not')
+# print(wrong_key)
 
-dict_update = {'new role': 'admin', 'salary': 10000}
-copy_test.update(dict_update)
-print(copy_test)
+# dict_update = {'new role': 'admin', 'salary': 10000}
+# copy_test.update(dict_update)
+# print(copy_test)
+
+
+# Урок 4: Структури даних: списки, кортежі, словники.(практика)
+
+#1
+# nums = [10, 20, 30, 40, 50]
+
+# print(nums[1:4])
+
+#2
+# data = (5, 10, 15, 20, 25)
+# print(data[2])
+
+#3
+
+# person = {"name": "Max", "age": 18, "city": "Kyiv"}
+
+# person_age = person.get('age')
+# print(person_age)
+
+#4
+
+numbers = [3, 7, 2, 9, 5]
+
+numbers.append(10)
+numbers.remove(7)
+numbers.sort()
+
+print(numbers)
+
+#5
+
+t = (1, 2, 3, 4, 5)
+
+list = list(t)
+list.append(6)
+
+print(tuple(list))
+
+#6
+
+user = {
+    'name': 'Anna',
+    'age': 21,
+    'city': 'Lviv'
+}
+
+user_update = {
+    'is_student': True
+}
+
+user.update(user_update)
+
+print(user)
+
+
