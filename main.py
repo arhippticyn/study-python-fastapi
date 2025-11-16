@@ -222,40 +222,114 @@
 #     if len(add_list) == 50:
 #         print('you middle')
 
-user_1 = {
-    'user_name': 'tester',
-    'role': 'admin',
-    'account_connection': True
-}
+# user_1 = {
+#     'user_name': 'tester',
+#     'role': 'admin',
+#     'account_connection': True
+# }
 
-user_2 = {
-    'user_name': 'junior',
-    'role': 'user',
-    'account_connection': False
-}
+# user_2 = {
+#     'user_name': 'junior',
+#     'role': 'user',
+#     'account_connection': False
+# }
 
-user_3 = {
-    'user_name': 'middle',
-    'role': 'pro_user',
-    'account_connection': True
-}
+# user_3 = {
+#     'user_name': 'middle',
+#     'role': 'pro_user',
+#     'account_connection': True
+# }
 
-list_of_users = [user_1, user_2, user_3]
+# list_of_users = [user_1, user_2, user_3]
 
-for user in list_of_users:
-    print(f'work with {user['user_name']} >-<')
-    if not user['account_connection']:
-       count_of_tries = 10
-       while count_of_tries != 0: 
-            print('Try to connect to user')
-            count_of_tries -= 1
-            if count_of_tries == 5:
-                    print('Middle of tries')
-                    continue
-            print('Count left', count_of_tries)
-    elif user['role'] == 'admin':
-        print(f'Hello in system {user['user_name']}')
-    else:
-        print('welcome')
+# for user in list_of_users:
+#     print(f'work with {user['user_name']} >-<')
+#     if not user['account_connection']:
+#        count_of_tries = 10
+#        while count_of_tries != 0: 
+#             print('Try to connect to user')
+#             count_of_tries -= 1
+#             if count_of_tries == 5:
+#                     print('Middle of tries')
+#                     continue
+#             print('Count left', count_of_tries)
+#     elif user['role'] == 'admin':
+#         print(f'Hello in system {user['user_name']}')
+#     else:
+#         print('welcome')
         
-print('All users were check')
+# print('All users were check')
+
+# a = [1,2,3,4,5]
+# b = ['apple', 'banana', 'cherry']
+
+# print(a[0], a[1], a[-1])
+# print(b[1])
+
+# print(a[1:4], a[::2])
+# print(b[::2])
+
+# print(a[::-1])
+# print(b[::-1])
+
+# a.append(6)
+# b.append('tomato')
+# print(a,b)
+
+# a.insert(3,7.4)
+# b.insert(3, 'bottle')
+
+# print(a,b)
+
+# a.remove(7.4)
+# b.remove('bottle')
+# print(a,b)
+
+# last_elem_1 = a.pop(0)
+# last_elem_2 = b.pop(0)
+# print(last_elem_1, last_elem_2)
+# print(a.index(3), b.index('banana'))
+
+# a.extend([5,5,5])
+# b.extend(['cherry', 'banana', 'banana'])
+# print(a.count(5), b.count('banana'), b.count('cherry'))
+
+# print(a,b)
+# a.sort(reverse=True)
+# b.sort(reverse=True)
+# print(a,b)
+# a.reverse()
+# b.reverse()
+# print(a,b)
+
+# a = (1,2,3,4,5,5,4)
+# print(a[0], a[1],a[2])
+# print(a[:2], a[-2:])
+
+# print(a.count(5), a.count(4))
+# print(a.index(4))
+
+test_dict = {'user': 'Oleg', 'age': 21, 'country': 'Poland'}
+# print(test_dict['user'], test_dict['age'], test_dict.get('country'))
+# print(test_dict.get('animal', 'key not'))
+# test_dict['age'] = 30
+# print(test_dict['age'])
+# test_dict['animal'] = 'cat'
+# print(test_dict)
+# animal = test_dict.pop('animal')
+# print(test_dict)
+# print(animal)
+copy_test = test_dict.copy()
+print(copy_test)
+test_dict.clear()
+print(test_dict)
+
+for key, value in copy_test.items():
+    print(f'key: {key}, Value: {value}')
+    
+wrong_key = copy_test.pop('currency', 'key not')
+print(wrong_key)
+
+dict_update = {'new role': 'admin', 'salary': 10000}
+copy_test.update(dict_update)
+print(copy_test)
