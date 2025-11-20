@@ -623,50 +623,371 @@
 
 # 1 Створи клас Car, який має: Атрибути:brand (марка),year (рік випуску) Метод: info() — повертає рядок: "Car: <brand>, year: <year>"
 
-class Car:
-    def __init__(self, brand, year):
-        self.brand = brand
-        self.year = year
+# class Car:
+#     def __init__(self, brand, year):
+#         self.brand = brand
+#         self.year = year
+        
+#     def info(self):
+#         brand = self.brand
+#         year = self.year
+#         print(f'Car: {brand}, year: {year}')
+        
+# car1 = Car('BMW', 2018)
+# car1.info()
+
+
+# # Створи клас User, який має:
+# # Атрибути:name,balance (початково передається в конструкторі)Методи:add_balance(amount) — додає гроші, info() — повертає:"User: Alex, balance: 200"
+
+# class User:
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.balance = balance
+        
+#     def add_balance(self,amount):
+#         self.balance += amount
+        
+#     def info(self):
+#         return f'User: {self.name}, balance: {self.balance}'
+        
+# user1 = User('Alex',100)
+# user1.add_balance(50)
+# print(user1.info())
+
+# # Створи клас Product, який має: Атрибути:name, price Метод:discount(percent) — зменшує ціну на відсоток
+
+# class Product:
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+        
+#     def discount(self, persent):
+        
+#         self.price = round(self.price * (1 - persent / 100), 2)
+    
+# product_1 = Product('Laptop', 1000)
+# print(product_1.__dict__)
+# product_1.discount(10)
+# print(product_1.price)
+
+
+# Урок 7: Наслідування та поліморфізм.
+
+# class A:
+#     '''Class A'''
+#     name_a = 'class A is parent'
+#     is_main_class = True
+    
+#     def print_hello(self):
+#         print('Hello from A')
+
+# class B(A):
+#     '''Class B'''
+#     name_b = 'class B is child'
+#     is_main_class = False
+    
+#     def print_hello(self):
+#         print('hello fron B')
+    
+# class C(B):
+#     '''Class C'''
+#     pass
+
+# test_ex = C()
+
+# print(test_ex.name_a)
+# print(test_ex.name_b)
+# print(test_ex.is_main_class)
+# test_ex.print_hello()
+
+
+# class Vehicle:
+#     '''It's a base class for Vehecle'''
+    
+#     def __init__(self, type, color, left_of_life = 100):
+#         self.type = type
+#         self.color = color
+#         self.left_of_life = left_of_life
+        
+#     def move(self):
+#         print('Your vehicle is moving')
+        
+#     def fix(self):
+#         if self.left_of_life <= 50:
+#           print(f'{self.type} need to fix')
+#         else:
+#             print(f'Your {self.type} is good')
+        
+# class Car(Vehicle):
+#     '''Class Car'''
+    
+#     def __init__(self, type, color,left_of_life, cost=0):
+#         super().__init__(type, color, left_of_life)
+#         self.cost = cost
+        
+#     def move(self):
+#         print(f'{self.color} {self.type} is driving')
+#         print(f'Cost of this car {self.cost}')
+        
+# class Bicycle(Vehicle):
+#     '''Class Bicycle'''
+    
+#     def __init__(self, type, color,left_of_life, count_of_wheels):
+#         super().__init__(type, color, left_of_life)
+#         self.count_of_wheels = count_of_wheels
+        
+#     def move(self):
+#         print('You are so fast')
+        
+# car_1 = Car('car', 'black',70, 10000)
+# car_1.move()
+# car_1.fix()
+# bicycle_1 = Bicycle('road_bicycle','blue',30, 2000)
+# bicycle_1.move()
+# bicycle_1.fix()
+
+# class Counter:
+#     '''Count of something'''
+    
+#     def __init__(self, count_obj, type_obj, max_elements):
+#         self.count_obj = count_obj
+#         self.type_obj = type_obj
+#         self.max_elements = max_elements
+        
+#     def counter(self):
+#         print(f'Type of object: {self.type_obj}')
+#         if isinstance(self.count_obj, (list, dict, str, tuple)):
+#             count= len(self.count_obj)
+#             if count > self.max_elements:
+#                 print('Count elements of your object more than need')
+#                 print(f'More on {count - self.max_elements}')
+#             else:
+#                 print(f'Count of elements {count}')
+#         else:
+#             print('Your object must be iterable')
+            
+#     def get_attrs(self):
+#         print(self.__dict__)
+        
+#     def set_attr(self, attr, value):
+#         if hasattr(self, attr):
+#             setattr(self, attr, value)
+#         else:
+#             print('Check your attrs')
+            
+# class ListElements(Counter):
+#     '''Class for lists elements'''
+    
+#     def __init__(self, count_obj, type_obj, max_elements):
+#         super().__init__(count_obj, type_obj, max_elements)
+#         pass
+    
+#     def counter(self):
+#         super().counter()
+        
+#         print('Operation was ended')
+        
+#     def get_attrs(self):
+#         super().get_attrs()
+#         print('Operation was ended')
+        
+# list_ex = ListElements([1,2,3,4], list, 10)
+# list_ex.counter()
+# list_ex.get_attrs()
+# list_ex.set_attr('count_obj', [1,2,3,4,5,6])
+
+# class BaseInterface:
+#     '''Base class'''
+    
+#     def __init__(self):
+#         pass
+        
+#     def get_attr(self):
+#         pass
+        
+#     def print_model(self):
+#         pass
+    
+#     def count_of_price(self):
+#         pass
+    
+#     def call_to_support(self):
+#         pass
+    
+# class SiteInterface(BaseInterface):
+#     '''Interface of our site'''
+    
+#     def __init__(self, number, model, price):
+#         super().__init__()
+#         self.number = number
+#         self.model = model
+#         self.price = price
+        
+#     def print_model(self):
+#         print(f'Model of site {self.model}')
+        
+#     def count_of_price(self):
+#         print(f'Count of site price: {self.price ** 2}')
+        
+#     def call_to_support(self):
+#         print(f'number of support is {self.number}')
+#         print(f'Your can call from 8 am to 19 pm')
+        
+# class AppInterface(BaseInterface):
+#     '''Interface of our app'''
+    
+#     def __init__(self, number, model, price):
+#         super().__init__()
+#         self.number = number
+#         self.model = model
+#         self.price = price
+        
+#     def print_model(self):
+#         print(f'Model of app: {self.model}')
+        
+#     def count_of_price(self):
+#         print(f'Count of app price: {self.price ** 2}')
+        
+#     def call_to_support(self):
+#         print(f'number of support is {self.number}')
+#         print(f'Your can call from 8 am to 19 pm')
+        
+# site_user = SiteInterface(12345, 'shop', 1000)
+# app_user = AppInterface(322324, 'android', 5000)
+
+# for user in (site_user, app_user):
+#     user.print_model()
+#     user.count_of_price()
+#     user.call_to_support()
+#     print('-------------')
+
+# Урок 7: Наслідування та поліморфізм.(практика)
+
+# Створи базовий клас Animal з методом: sound()
+# У підкласах Dog та Cat перевизнач звук:Dog → "Woof!" Cat → "Meow!"
+
+class Animal:
+    def __init__(self):
+        pass
+    
+    def sound(self):
+        pass
+    
+class Dog(Animal):
+    def sound(self):
+        return 'Woof!'
+        
+class Cat(Animal):
+    def sound(self):
+        return 'Meow'
+        
+animals = [Dog(), Cat(), Dog()]
+
+for animal in animals:
+    print(animal.sound())
+    
+    
+# Створи: Клас Vehicle:атрибут: speed метод: info() → "Speed: <speed>"
+# Клас Car (успадковує Vehicle):атрибут: fuel метод: info() → "Speed: <speed>, Fuel: <fuel>"
+# Клас ElectricCar (успадковує Car):атрибут: battery метод: info() → "Speed: <speed>, Battery: <battery>"
+
+class Vehicle: 
+    def __init__(self,speed):
+        self.speed = speed
         
     def info(self):
-        brand = self.brand
-        year = self.year
-        print(f'Car: {brand}, year: {year}')
-        
-car1 = Car('BMW', 2018)
-car1.info()
-
-
-# Створи клас User, який має:
-# Атрибути:name,balance (початково передається в конструкторі)Методи:add_balance(amount) — додає гроші, info() — повертає:"User: Alex, balance: 200"
-
-class User:
-    def __init__(self, name, balance):
-        self.name = name
-        self.balance = balance
-        
-    def add_balance(self,amount):
-        self.balance += amount
+        return f'Speed: {self.speed}'
+    
+class Car(Vehicle):
+    def __init__(self, speed, fuel):
+        super().__init__(speed)
+        self.fuel = fuel
         
     def info(self):
-        return f'User: {self.name}, balance: {self.balance}'
+        return f'{super().info()}, Fuel: {self.fuel}'
+    
+class ElectricCar(Car):
+    def __init__(self, speed, fuel, battery):
+        super().__init__(speed, fuel)
+        self.battery = battery
         
-user1 = User('Alex',100)
-user1.add_balance(50)
-print(user1.info())
+    def info(self):
+        return f'{super().info()}, battery: {self.battery}'
+    
+ec = ElectricCar(120, 'none', 80)
+print(ec.info())
 
-# Створи клас Product, який має: Атрибути:name, price Метод:discount(percent) — зменшує ціну на відсоток
+# Створи базовий клас Shape з методом: area()
+# І створи: Клас Circle: приймає radius, area → 3.14 * r * r
+# Клас Rectangle: приймає width, height,area → width * height
+
+import math
+
+class Shape: 
+    def __init__(self):
+        pass
+    
+    def area(self):
+        pass
+    
+class Circle(Shape):
+    def __init__(self, radius):
+        super().__init__()
+        self.radius = radius
+        
+    def area(self):
+        return round(math.pi * (self.radius ** 2), 2)
+    
+class Rectange(Shape):
+    def __init__(self, width, height):
+        super().__init__()
+        self.width = width
+        self.height = height
+        
+    def area(self):
+        return self.width * self.height
+    
+shapes = [Circle(5), Rectange(4,6)]
+
+for shape in shapes:
+    print(shape.area())
+    print('--------------')
+    
+# Є базовий клас:
+
+# Product:name, price, метод: get_price()
+# Створи підкласи: DiscountProduct: атрибут: percent, get_price() → повертає ціну з урахуванням знижки
+# LimitedProduct:атрибут: limited_count,get_price() → якщо limited_count = 0 → повернути "No stock" інакше повернути звичайну ціну
 
 class Product:
     def __init__(self, name, price):
         self.name = name
         self.price = price
         
-    def discount(self, persent):
-        
-        self.price = round(self.price * (1 - persent / 100), 2)
+    def get_price(self):
+        pass
     
-product_1 = Product('Laptop', 1000)
-print(product_1.__dict__)
-product_1.discount(10)
-print(product_1.price)
+class DiscountProduct(Product):
+    def __init__(self, name, price, percent):
+        super().__init__(name, price)
+        self.percent = percent
+        
+    def get_price(self):
+        return round(self.price * (1 - self.percent / 100), 2)
+    
+class LimitedProduct(Product):
+    def __init__(self, name, price, limited_count):
+        super().__init__(name, price)
+        self.limited_count = limited_count
+        
+    def get_price(self):
+        if self.limited_count == 0:
+            return 'No stock'
+        else:
+            return self.price
+        
+products = [DiscountProduct('iphone', 1000, 18), LimitedProduct('mac', 1300, 2), LimitedProduct('mac', 1300, 0)]
+for product in products:
+    print(product.get_price())
+    print('------------')
