@@ -867,127 +867,859 @@
 # Створи базовий клас Animal з методом: sound()
 # У підкласах Dog та Cat перевизнач звук:Dog → "Woof!" Cat → "Meow!"
 
-class Animal:
-    def __init__(self):
-        pass
+# class Animal:
+#     def __init__(self):
+#         pass
     
-    def sound(self):
-        pass
+#     def sound(self):
+#         pass
     
-class Dog(Animal):
-    def sound(self):
-        return 'Woof!'
+# class Dog(Animal):
+#     def sound(self):
+#         return 'Woof!'
         
-class Cat(Animal):
-    def sound(self):
-        return 'Meow'
+# class Cat(Animal):
+#     def sound(self):
+#         return 'Meow'
         
-animals = [Dog(), Cat(), Dog()]
+# animals = [Dog(), Cat(), Dog()]
 
-for animal in animals:
-    print(animal.sound())
+# for animal in animals:
+#     print(animal.sound())
     
     
-# Створи: Клас Vehicle:атрибут: speed метод: info() → "Speed: <speed>"
-# Клас Car (успадковує Vehicle):атрибут: fuel метод: info() → "Speed: <speed>, Fuel: <fuel>"
-# Клас ElectricCar (успадковує Car):атрибут: battery метод: info() → "Speed: <speed>, Battery: <battery>"
+# # Створи: Клас Vehicle:атрибут: speed метод: info() → "Speed: <speed>"
+# # Клас Car (успадковує Vehicle):атрибут: fuel метод: info() → "Speed: <speed>, Fuel: <fuel>"
+# # Клас ElectricCar (успадковує Car):атрибут: battery метод: info() → "Speed: <speed>, Battery: <battery>"
 
-class Vehicle: 
-    def __init__(self,speed):
-        self.speed = speed
+# class Vehicle: 
+#     def __init__(self,speed):
+#         self.speed = speed
         
-    def info(self):
-        return f'Speed: {self.speed}'
+#     def info(self):
+#         return f'Speed: {self.speed}'
     
-class Car(Vehicle):
-    def __init__(self, speed, fuel):
-        super().__init__(speed)
-        self.fuel = fuel
+# class Car(Vehicle):
+#     def __init__(self, speed, fuel):
+#         super().__init__(speed)
+#         self.fuel = fuel
         
-    def info(self):
-        return f'{super().info()}, Fuel: {self.fuel}'
+#     def info(self):
+#         return f'{super().info()}, Fuel: {self.fuel}'
     
-class ElectricCar(Car):
-    def __init__(self, speed, fuel, battery):
-        super().__init__(speed, fuel)
-        self.battery = battery
+# class ElectricCar(Car):
+#     def __init__(self, speed, fuel, battery):
+#         super().__init__(speed, fuel)
+#         self.battery = battery
         
-    def info(self):
-        return f'{super().info()}, battery: {self.battery}'
+#     def info(self):
+#         return f'{super().info()}, battery: {self.battery}'
     
-ec = ElectricCar(120, 'none', 80)
-print(ec.info())
+# ec = ElectricCar(120, 'none', 80)
+# print(ec.info())
 
-# Створи базовий клас Shape з методом: area()
-# І створи: Клас Circle: приймає radius, area → 3.14 * r * r
-# Клас Rectangle: приймає width, height,area → width * height
+# # Створи базовий клас Shape з методом: area()
+# # І створи: Клас Circle: приймає radius, area → 3.14 * r * r
+# # Клас Rectangle: приймає width, height,area → width * height
 
-import math
+# import math
 
-class Shape: 
-    def __init__(self):
-        pass
+# class Shape: 
+#     def __init__(self):
+#         pass
     
-    def area(self):
-        pass
+#     def area(self):
+#         pass
     
-class Circle(Shape):
-    def __init__(self, radius):
-        super().__init__()
-        self.radius = radius
+# class Circle(Shape):
+#     def __init__(self, radius):
+#         super().__init__()
+#         self.radius = radius
         
-    def area(self):
-        return round(math.pi * (self.radius ** 2), 2)
+#     def area(self):
+#         return round(math.pi * (self.radius ** 2), 2)
     
-class Rectange(Shape):
-    def __init__(self, width, height):
-        super().__init__()
-        self.width = width
-        self.height = height
+# class Rectange(Shape):
+#     def __init__(self, width, height):
+#         super().__init__()
+#         self.width = width
+#         self.height = height
         
-    def area(self):
-        return self.width * self.height
+#     def area(self):
+#         return self.width * self.height
     
-shapes = [Circle(5), Rectange(4,6)]
+# shapes = [Circle(5), Rectange(4,6)]
 
-for shape in shapes:
-    print(shape.area())
-    print('--------------')
+# for shape in shapes:
+#     print(shape.area())
+#     print('--------------')
     
-# Є базовий клас:
+# # Є базовий клас:
 
-# Product:name, price, метод: get_price()
-# Створи підкласи: DiscountProduct: атрибут: percent, get_price() → повертає ціну з урахуванням знижки
-# LimitedProduct:атрибут: limited_count,get_price() → якщо limited_count = 0 → повернути "No stock" інакше повернути звичайну ціну
+# # Product:name, price, метод: get_price()
+# # Створи підкласи: DiscountProduct: атрибут: percent, get_price() → повертає ціну з урахуванням знижки
+# # LimitedProduct:атрибут: limited_count,get_price() → якщо limited_count = 0 → повернути "No stock" інакше повернути звичайну ціну
 
-class Product:
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
+# class Product:
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
         
-    def get_price(self):
-        pass
+#     def get_price(self):
+#         pass
     
-class DiscountProduct(Product):
-    def __init__(self, name, price, percent):
-        super().__init__(name, price)
-        self.percent = percent
+# class DiscountProduct(Product):
+#     def __init__(self, name, price, percent):
+#         super().__init__(name, price)
+#         self.percent = percent
         
-    def get_price(self):
-        return round(self.price * (1 - self.percent / 100), 2)
+#     def get_price(self):
+#         return round(self.price * (1 - self.percent / 100), 2)
     
-class LimitedProduct(Product):
-    def __init__(self, name, price, limited_count):
-        super().__init__(name, price)
-        self.limited_count = limited_count
+# class LimitedProduct(Product):
+#     def __init__(self, name, price, limited_count):
+#         super().__init__(name, price)
+#         self.limited_count = limited_count
         
-    def get_price(self):
-        if self.limited_count == 0:
-            return 'No stock'
-        else:
-            return self.price
+#     def get_price(self):
+#         if self.limited_count == 0:
+#             return 'No stock'
+#         else:
+#             return self.price
         
-products = [DiscountProduct('iphone', 1000, 18), LimitedProduct('mac', 1300, 2), LimitedProduct('mac', 1300, 0)]
-for product in products:
-    print(product.get_price())
-    print('------------')
+# products = [DiscountProduct('iphone', 1000, 18), LimitedProduct('mac', 1300, 2), LimitedProduct('mac', 1300, 0)]
+# for product in products:
+#     print(product.get_price())
+#     print('------------')
+
+# Урок 8: Інкапсуляція та абстракція
+
+# class Card:
+#     '''Class Card for users card'''
+    
+#     def __init__(self, card_number, balance):
+#         if self.__check_attribuite_type(card_number, str):
+#            self._card_number = card_number
+#         if self.__check_attribuite_type(balance, float):
+#            self.__balance = balance
+        
+#     def get_cart_data(self):
+#         return self.__dict__
+    
+#     def set_card_data(self, attr, value):
+#         if self.__check_attribuite_type(attr, str):
+#            self.__dict__[attr] = value
+#            return {attr: self.__dict__[attr]}
+#         else:
+#             return 'Attribute must be string type'
+        
+#     def __check_attribuite_type(self, attr, should_be):
+#         if type(attr) == should_be:
+#             return True
+#         else:
+#             raise TypeError(f'Attribute must be {should_be}')
+        
+# user_card_1 = Card('3424 2414 1451 1553', 1000.0)
+# print(user_card_1.get_cart_data())
+# print(user_card_1.set_card_data('card_number', '0000 0000 0000 0000'))
+# print(user_card_1.set_card_data('balance', 100))
+# print(user_card_1.__balance)
+
+# Урок 8: Інкапсуляція та абстракція(практика)
+
+# Створи клас BankAccount, де:
+# Приватні атрибути: __balance (початково 0)
+# Методи:deposit(amount) — додає гроші (якщо amount > 0)
+# withdraw(amount) — знімає гроші (якщо є достатньо)
+# get_balance() — повертає баланс
+# Використай інкапсуляцію (приватний баланс).
+
+
+
+# class BankAccount:
+#     def __init__(self, balance=0):
+#         self.__balance = balance
+        
+#     def deposit(self, amount):
+#         if amount > 0:
+#             self.__balance += amount
+#             return self.__balance
+#         else:
+#             return 'Мало грошей'
+        
+#     def withdraw(self, amount):
+#         if self.__balance >= amount:
+#             self.__balance -= amount
+#             return self.__balance
+#         else:
+#             return 'Недостаньо грошей'
+        
+#     def get_balance(self):
+#         return self.__dict__
+    
+# acc = BankAccount()
+# acc.deposit(100)
+# acc.withdraw(30)
+# print(acc.get_balance())
+
+# Створи абстрактний клас Device, де:
+# Абстрактний метод: turn_on()
+# Створи два класи:
+# Phone:метод turn_on() → "Phone is turning on"
+# Laptop:метод turn_on() → "Laptop is booting"
+
+# from abc import ABC, abstractclassmethod
+
+# class Device(ABC):
+#     @abstractclassmethod
+#     def turn_on(self):
+#         pass
+    
+    
+# class Phone(Device):
+#     def turn_on(self):
+#         return "Phone is turning on"
+    
+# class Laptop(Device):
+#     def turn_on(self):
+#         return 'Laptop is booting'
+    
+# devices = [Phone(), Laptop()]
+
+# for device in devices:
+#     print(device.turn_on())
+    
+# Створи клас User, де:
+# Приватні атрибути:__name,__age
+# Методи:get_name(),set_name(new_name) (перевірка: ім’я не пусте)
+# get_age()set_age(new_age) (перевірка: new_age ≥ 0)
+
+# class User:
+#     def __init__(self, name, age):
+#         self.__name = name
+#         self.__age = age
+        
+#     def get_name(self):
+#         return self.__name
+    
+#     def set_name(self, new_name):
+#         if new_name.strip():
+#             self.__name = new_name
+#             return self.__name
+#         else:
+#             return 'please write name'
+        
+#     def get_age(self):
+#         return self.__age
+    
+#     def set_age(self, new_age):
+#         if new_age >= 0:
+#             self.__age = new_age
+#             return self.__age
+        
+# u = User('Alex', 15)
+# u.set_age(16)
+# print(u.get_age())
+
+# Урок 9: Принципи SOLID в ООП.
+
+# Принцип єдиного обов'язку
+
+# class Journal:
+#     def __init__(self):
+#         self.entries = []
+#         self.count = 0
+        
+#     def add_entry(self, text):
+#         self.count += 1
+#         self.entries.append(f'{self.count}: {text}')
+    
+#     def remove_entry(self, pos):
+#         del self.entries[pos]
+        
+#     def __str__(self):
+#         return '\n'.join(self.entries)
+    
+# class SaveFiles:
+#     @staticmethod
+#     def save_to_file(journal, filename):
+#         with open(file = filename,mode = 'w') as file:
+#             file.write(journal)
+            
+# class LoadFiles:
+#     @staticmethod
+#     def load_file(self):
+#         pass
+    
+# j = Journal()
+# j.add_entry('I ate today')
+# j.add_entry('I slept yesterday')
+# print(f'Count of entries:\n{j}')
+
+# Принцип відкритості/закритості
+
+# Неправильно
+
+
+# from enum import Enum
+
+
+# class Product(Enum):
+#     SHIRT = 1
+#     TSHIRT = 2
+#     PANT = 3
+    
+# class DiscountCalculator:
+#     def __init__(self, product_type, cost):
+#         self.product_type = product_type
+#         self.cost = cost
+        
+#     def get_discount(self):
+#         if self.product_type == Product.SHIRT:
+#             return self.cost - (self.cost * 0.10)
+#         elif self.product_type == Product.TSHIRT:
+#             return self.cost - (self.cost * 0.15)
+#         elif self.product_type == Product.PANT:
+#             return self.cost - (self.cost * 0.20)
+        
+# dc_shirt = DiscountCalculator(Product.SHIRT, 100)
+# print(dc_shirt.get_discount())
+# dc_tshirt = DiscountCalculator(Product.TSHIRT, 200)
+# print(dc_tshirt.get_discount())
+# dc_pant = DiscountCalculator(Product.PANT, 300)
+# print(dc_pant.get_discount())
+
+
+# Приавильно
+
+# from abc import ABC, abstractmethod
+
+# class Product(ABC):
+#     @abstractmethod
+#     def get_discount(self):
+#         pass
+    
+# class DiscountCalculatorShirt(Product):
+#     def __init__(self, cost, sale):
+#         self.cost = cost
+#         self.sale = sale
+        
+#     def get_discount(self):
+#         return self.cost - (self.cost * self.sale)
+    
+# class DiscountCalculatorTShirt(Product):
+#     def __init__(self, cost, sale):
+#         self.cost = cost
+#         self.sale = sale
+        
+#     def get_discount(self):
+#         return self.cost - (self.cost * self.sale)
+    
+# class DiscountCalculatorPant(Product):
+#     def __init__(self, cost, sale):
+#         self.cost = cost
+#         self.sale = sale
+        
+#     def get_discount(self):
+#         return self.cost - (self.cost * self.sale)
+    
+# shirt = DiscountCalculatorShirt(1000, 0.15)
+# t_shirt = DiscountCalculatorTShirt(2000, 0.30)
+# pant = DiscountCalculatorPant(500, 0.10)
+
+# clouses = [shirt, t_shirt, pant]
+
+# for clouse in clouses:
+#     print(clouse.get_discount())
+    
+    
+# Принцип підстановки Барбари Лісков
+
+# class Car:
+#     def __init__(self,type):
+#         self.type = type
+#         self.properties = {}
+        
+#     def set_properties(self, color, cost, capacity):
+#         self.properties = {'Color': color, 'Cost': cost, 'Capacity': capacity}
+        
+#     def get_properties(self):
+#         return self.properties
+    
+# class PetrolCar(Car):
+#     def __init__(self, type):
+#         self.type = type
+#         self.properties = {}
+        
+# car = Car('SKODA')
+# car.set_properties('Black', 10000, 5)
+
+# petrol_car = PetrolCar('Nissan')
+# petrol_car.set_properties('Blue', 8000, 3)
+
+# cars = [car, petrol_car]
+
+# def get_color_car(color):
+#     count = 0
+#     car_type = []
+#     for car in cars:
+#         if car.properties['Color'] == color:
+#             count += 1
+#             car_type.append(car.type)
+            
+#     print(f'Count of {color} cars: {count} \n {color} cars: {car_type}')
+
+ 
+# get_color_car('Black')
+
+# Принцип розділення інтерфейсу
+
+# from abc import ABC, abstractmethod
+
+# class MakeCall(ABC):
+#     @abstractmethod
+#     def make_call(self):
+#         pass
+    
+    
+# class SendSms(ABC): 
+#     @abstractmethod
+#     def send_sms(self):
+#         pass
+    
+# class GetInternet(ABC):
+#     @abstractmethod
+#     def get_internet(self):
+#         pass
+    
+# class MobilePhone(MakeCall, SendSms, GetInternet):
+#     def make_call(self):
+#         print('calling abonent')
+        
+#     def send_sms(self):
+#         print('Sending sms')
+        
+#     def get_internet(self):
+#         print('connct to internet')
+        
+# class StacionarPhone(MakeCall):
+#     def make_call(self):
+#         print('calling')
+        
+                
+# mobile_phone = MobilePhone()
+# mobile_phone.make_call()
+# mobile_phone.send_sms()
+# mobile_phone.get_internet()
+
+# print('------------------')
+
+# stacionar_phone = StacionarPhone()
+# stacionar_phone.make_call()
+
+# Принцип інверсії залежностей
+
+# from enum import Enum
+# from abc import ABC, abstractmethod
+
+
+# class Teams(Enum):
+#     BLUE_TEAM = 1
+#     RED_TEAM = 2
+#     GREEN_TEAM = 3
+    
+# class TeamMembershipLookUp(ABC):
+#     @abstractmethod
+#     def find_all_students(self, team):
+#         pass
+    
+# class Student:
+#     def __init__(self, name):
+#         self.name = name
+        
+# class TeamMemberShips(TeamMembershipLookUp):
+#     def __init__(self):
+#         self.team_memberships = []
+        
+#     def add_team_memberships(self, student, team):
+#         self.team_memberships.append((student,team))
+        
+#     def find_all_students(self, team):
+#         for members in self.team_memberships:
+#             if members[1] == team:
+#                 yield members[0].name 
+                
+                                       
+# class Analysys:
+#     def __init__(self, team_member_ship_lookup):
+#         # memberships = team_student_membership.team_memberships
+#         # for member in memberships:
+#         #     if member[1] == Teams.RED_TEAM:
+#         #         print(f'{member[0].name} is in red team')
+#         for student in team_member_ship_lookup.find_all_students(Teams.RED_TEAM):
+#             print(f'{student} is in Red team')
+                
+                
+# student_1 = Student('Oleg')
+# student_2 = Student('Dima')
+# student_3 = Student('Serega')
+
+# team_memberships = TeamMemberShips()
+# team_memberships.add_team_memberships(student_1, Teams.RED_TEAM)
+# team_memberships.add_team_memberships(student_2, Teams.RED_TEAM)
+# team_memberships.add_team_memberships(student_3, Teams.RED_TEAM)
+
+# Analysys(team_memberships)
+
+# Задача 1 — SRP
+
+# class User:
+#     def __init__(self, name, email):
+#         self.name = name
+#         self.email = email
+    
+
+# class SaveFile:
+#     @staticmethod
+#     def save_to_file(name, email):
+#         with open("users.txt", "a") as f:
+#             f.write(name + " " + email + "\n")
+            
+# Задача 2 — OCP (розширення без зміни)
+# from abc import ABC, abstractmethod
+
+# class Discount(ABC):
+#     @abstractmethod
+#     def get(self):
+#         pass
+    
+# class DiscountNew(Discount):
+#     def __init__(self, price, sale):
+#         self.price = price
+#         self.sale = sale
+        
+#     def get(self):
+#         return self.price - (self.price * self.sale)
+        
+# class DiscountVip(Discount):
+#     def __init__(self, price, sale):
+#         self.price = price
+#         self.sale = sale
+        
+#     def get(self):
+#         return self.price - (self.price * self.sale)
+    
+# new = DiscountNew(100, 0.10)
+# print(new.get())
+# vip = DiscountVip(1825,0.15)
+# print(vip.get())
+
+# Задача 3 — DIP (залежність від абстракцій)
+
+# from abc import ABC, abstractmethod
+
+# class Sender(ABC):
+#     @abstractmethod
+#     def send(self,msg):
+#         pass
+    
+# class SmsSender(Sender):
+#     def send(self, msg):
+#         print(f'Send SMS: {msg}')
+
+# class EmailSender(Sender):
+#     def send(self, msg):
+#         print(f"Send email: {msg}")
+
+
+# class Notifier:
+#     def __init__(self, sender: Sender):
+#         self._sender = sender
+    
+#     def notify(self, msg):
+#         self._sender.send(msg)
+        
+
+# sms_sendler = SmsSender()        
+# notifer = Notifier(sms_sendler)
+# notifer.notify('Hello world!')
+
+# email_sendler = EmailSender()
+# notifer = Notifier(email_sendler)
+# notifer.notify('Bello bello')
+
+
+# Декоратори
+
+
+
+
+# def my_decorator(func):
+#     def wrapper(*args, **kwargs):
+#         print('Что то случилось перед функцией')
+#         result =  func(*args, **kwargs)
+#         print('Функция прошла')
+#         return result
+    
+#     return wrapper
+
+# def say_hello():
+#     print('Hello')
+    
+# my_decorator(say_hello)()
+
+
+
+# @my_decorator
+# def add_numbers(a, b)-> None:
+#     print('Adding number')
+#     return a + b
+
+
+
+# print(add_numbers(2,3))
+
+
+# import time
+# import requests
+# from requests.exceptions import RequestException
+
+# API_KEY = 'AZ8HWXQ5HHPK4XDVR7FD5CYM3'
+
+# def retry(func):
+#     def wrapper_retry(*args, **kwargs):
+#         retries = [5, 30]
+#         for seconds in retries:
+#             try:
+#                 return func(*args, **kwargs)
+#             except RequestException:
+#                 print(f'Failed to get data, Retrying in {seconds} seconds')
+#                 time.sleep(seconds)
+                
+#         return func(*args, **kwargs)
+#     return wrapper_retry
+
+# @retry
+# def get_weather_by_hours_for_day_from_api(date, city):
+#     url = f'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{city}/{date}/{date}?key={API_KEY}'
+#     response = requests.get(url)
+#     weather_by_day = response.json()['days']
+#     weather_by_hours = weather_by_day[0]['hours']
+#     return weather_by_hours
+    
+    
+# def farengeit_to_celsius(farengeit):
+#     return round((farengeit - 32) * 5 / 9)
+
+# def get_dangerous_hours(weather_by_hours) -> int:
+#     dangerous = []
+#     for weather in weather_by_hours:
+#         uvindex = weather['uvindex']
+#         time = weather['datetime']
+#         celsius_tempurature = farengeit_to_celsius(weather['temp'])
+#         if uvindex >= 3:
+#             dangerous.append({'time': time, 'uvindex': uvindex, 'tempurature': celsius_tempurature})
+#     return dangerous
+
+# date = '2025-11-23'
+# city = 'Singapore'
+# weather_by_hour = get_weather_by_hours_for_day_from_api(date, city)
+# dangerous_hours = get_dangerous_hours(weather_by_hour)
+# print(dangerous_hours)
+
+# декораторы практика
+
+# Напиши декоратор uppercase, який робить текст функції великими літерами
+
+# def uppercase(func):
+#     def wrapper(name):
+#         print('Hello')
+#         result = func(name)
+#         result_upper = result.upper()
+#         print('GoodBye')
+#         return result_upper
+        
+#     return wrapper
+
+# @uppercase
+# def get_name(name):
+#     return f'name: {name}'
+
+# print(get_name('arhip'))
+
+# Напиши декоратор timer, який вимірює, скільки часу виконується функція.
+
+# import time
+
+# def timer(func):
+#     def wrapper(*args, **kwargs):
+#         start = time.perf_counter()
+#         result = func(*args, **kwargs)
+#         end = time.perf_counter()
+#         print(f'time func: {end - start:.6f}s')
+#         return result
+#     return wrapper
+
+# @timer
+# def func():
+#     time.sleep(1)
+
+# func()
+
+# 
+
+
+
+# def debug(func):
+#     def wrapper(*args, **kwargs):
+#         print(f'Вызываю {func.__name__}')
+#         result = func(*args, **kwargs)
+#         return f'result: {result}'
+#     return wrapper
+
+# @debug
+# def add(a, b):
+#     return a + b
+
+# print(add(2,5))
+
+# Урок 1: Основи веб-розробки та архітектура клієнт-сервер.
+
+
+
+# site = 'https://jsonplaceholder.typicode.com/posts/1'
+# response_get = requests.get(site)
+# print(response_get.headers)
+# for header, value in response_get.headers.items():
+#     print(f'Header: {header}, --> value: {value}')
+# print(response_get.text)
+# print('----------------')
+# body = {
+#     'userId': 12,
+#     'title': 'test',
+#     'body': 'test',
+# }
+# headers = {
+#     'Content-Type': 'application/json; charset=utf-8'
+# }
+# response_post = requests.post(site, json=body, headers=headers)
+# print(response_post.status_code)
+# print('-----------------')
+# print(response_post.reason)
+# print('-----------------')
+# print(response_post.text)
+# print('-----------------')
+
+# data = {
+#     'title': 'test_put'
+# }
+# response_put = requests.put(site, data=data)
+# print(response_put.status_code)
+# print(response_put.reason)
+# print(response_put.text)
+
+# print('----------------')
+
+# response_patch = requests.patch(site, data=data)
+# print(response_patch.status_code)
+# print(response_patch.reason)
+# print(response_patch.text)
+
+# print('----------------')
+
+# response_delete = requests.delete(site)
+# print(response_delete.status_code)
+# print(response_delete.reason)
+# print(response_delete.text)
+
+# Задание 1: Получение данных с API
+
+# import requests
+
+# url = 'https://jsonplaceholder.typicode.com/posts'
+
+# response_get = requests.get(url=url)
+# print(response_get.json())
+# print('--------------------')
+# print(response_get.json()[0]['title'])
+
+# Задание 2: Создание нового поста
+
+# data = {
+#     'id': 11,
+#     'title':'This is my first post',
+#     'body': 'Text post',
+# }
+
+# response_post = requests.post(url=url, json=data)
+# print(response_post.status_code)
+# print('---------')
+# print(response_post.reason)
+# print('-----------')
+# print(response_post.text)
+# print('-----------')
+
+# Урок 2: Введення до FastAPI. Встановлення та перша програма.
+
+
+
+
+# @app.get('/')
+# def root():
+#     return {'message': 'Hello world'}
+
+# @app.get("/items/{item_id}")
+# async def read_item(item_id):
+#     return {'item_id': item_id}
+
+# @app.get("/items/{item_id}")
+# async def read_items(item_id: int):
+#     return {'item_id': item_id}
+
+# @app.get('/models/{model_name}')
+# async def get_model(model_name: ModelName):
+#     if model_name is ModelName.alexnet:
+#         return {'model_name': model_name, 'message': 'good'}
+#     if model_name.value == 'lenet':
+#          return {'model_name': model_name, 'message': 'Lenet'}
+     
+#     return {'model_name': model_name, 'message': 'Have some reduals'}
+
+# fale_items_db = [{'item_name': 'Foo'}, {'item_name': 'Bar'}, {'item_name': 'Baz'}]
+
+# @app.get('/items/')
+# async def read_item(skip: int = 0, limit: int = 5):
+#     return fale_items_db[skip: skip + limit]
+
+# @app.get('/items/{item_id}')
+# async def read_item(item_id: str, q: str | None = None):
+#     if q:
+#         return {'item_id': item_id, 'q': q}
+#     return {'item_id': item_id}
+
+# @app.get('/items/{item_id}')
+# async def read_item(item_id: str, q: str | None = None, short: bool = False):
+#     item = {'item_id': item_id}
+#     if q:
+#         item.update({'q': q})
+#     if not short:
+#         item.update({'description': 'This is amazing item has long descr'})
+#     return item
+
+# @app.get('/users/{user_id}/items/{item_id}')
+# async def read_item(user_id: int, item_id: str, q: str | None = None, short: bool = False):
+#     item = {'item_id': item_id, 'owner_id': user_id}
+#     if q:
+#         item.update({'q': q})
+#     if not short:
+#         item.update({'description': 'This is amazing item has long descr'})
+#     return item
+
+# @app.get('/items/{item_id}')
+# async def read_user_item(
+#     item_id: str, needy: str, skip: int = 0, limit: int | None = None
+# ):
+#     item = {'item_id': item_id, "needy": needy, 'skip': skip, 'limit': limit}
+#     return item 
+
+# Урок 2: Введення до FastAPI. Встановлення та перша програма. (практика)
